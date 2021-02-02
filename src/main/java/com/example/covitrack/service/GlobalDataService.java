@@ -7,7 +7,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javax.annotation.PostConstruct;
 import com.example.covitrack.model.CountryData;
 import com.example.covitrack.model.GlobalData;
 import com.example.covitrack.repo.ApiUrlEndpoints;
@@ -70,7 +69,6 @@ public class GlobalDataService {
         return globalData;
     }
 
-    @PostConstruct
     public List<CountryData> fetchCountryData() {
 
         String countryJsonResponse = "";
