@@ -2,7 +2,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covitrack</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -12,7 +11,7 @@
 
 <body th:background="@{/images/bg-image.png}">
     
-    <h1 class="display-6 text-center text-white bg-primary bg-gradient rounded-3 pb-2 m-2">
+    <h1 class="display-6 text-center text-white bg-primary rounded-3 pb-2 m-1">
         Here are the latest global covid-19 statistics
     </h1>
     
@@ -26,44 +25,50 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card text-white bg-secondary mb-2 border border-2 border-white" style="max-width: 100%;">
-                    <div class="card-header">Total Reported Cases</div>
-                    <div class="card-body">
-                      <h2 class="card-title" th:text="${globalData.confirmed}"></h2>
+            <div class="col-12">
+                <div class="container-fluid bg-transparent border border-2 border-warning rounded-2 p-1">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="card text-white bg-secondary m-1 border border-2 border-white" style="max-width: 100%;">
+                                <div class="card-header">Total Reported Cases Worldwide</div>
+                                <div class="card-body">
+                                  <h2 class="card-title" th:text="${globalData.confirmed}"></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-white bg-success m-1 border border-2 border-white" style="max-width: 100%;">
+                                <div class="card-header">Total Recovered Cases Worldwide</div>
+                                <div class="card-body">
+                                  <h2 class="card-title" th:text="${globalData.recovered}"></h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card text-white bg-success mb-2 border border-2 border-white" style="max-width: 100%;">
-                    <div class="card-header">Total Recovered Cases</div>
-                    <div class="card-body">
-                      <h2 class="card-title" th:text="${globalData.recovered}"></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card text-white bg-dark mb-2 border border-2 border-white" style="max-width: 100%;">
-                    <div class="card-header">Total Reported Deaths</div>
-                    <div class="card-body">
-                      <h2 class="card-title" th:text="${globalData.deaths}"></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card text-white bg-danger mb-2 border border-2 border-white" style="max-width: 100%;">
-                    <div class="card-header">Total Active Cases</div>
-                    <div class="card-body">
-                      <h2 class="card-title" th:text="${globalData.active}"></h2>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="card text-white bg-dark m-1 border border-2 border-white" style="max-width: 100%;">
+                                <div class="card-header">Total Reported Deaths Worldwide</div>
+                                <div class="card-body">
+                                  <h2 class="card-title" th:text="${globalData.deaths}"></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-white bg-danger m-1 border border-2 border-white" style="max-width: 100%;">
+                                <div class="card-header">Total Active Cases Worldwide</div>
+                                <div class="card-body">
+                                  <h2 class="card-title" th:text="${globalData.active}"></h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h1 class="display-6 text-center text-white bg-primary bg-gradient rounded-3 pb-2 m-2">
+    <h1 class="display-6 text-center text-white bg-primary rounded-3 pb-2 m-1">
         Check out the statistics for each country
     </h1>
 
@@ -75,14 +80,14 @@
     >
 
     <div class="container">
-        <table class="text-white table bg-transparent table-bordered border border-2">
+        <table class="text-white table table-bordered table-responsive bg-transparent overflow-auto">
             <thead>
                 <tr>
-                    <th class="h3 border border-2 border-warning" scope="col">Country</th>
-                    <th class="h3 border border-2 border-warning" scope="col">Reported Cases</th>
-                    <th class="h3 border border-2 border-warning" scope="col">Recovered Cases</th>
-                    <th class="h3 border border-2 border-warning" scope="col">Reported Deaths</th>
-                    <th class="h3 border border-2 border-warning" scope="col">Active Cases</th>
+                    <th class="h3 bg-warning" scope="col" style="position: -webkit-sticky; position: sticky; top: 0;">Country</th>
+                    <th class="h3 bg-warning" scope="col" style="position: -webkit-sticky; position: sticky; top: 0;">Reported Cases</th>
+                    <th class="h3 bg-warning" scope="col" style="position: -webkit-sticky; position: sticky; top: 0;">Recovered Cases</th>
+                    <th class="h3 bg-warning" scope="col" style="position: -webkit-sticky; position: sticky; top: 0;">Reported Deaths</th>
+                    <th class="h3 bg-warning" scope="col" style="position: -webkit-sticky; position: sticky; top: 0;">Active Cases</th>
                 </tr>
             </thead>
             <tbody>

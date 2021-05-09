@@ -40,7 +40,7 @@ public class GlobalDataService {
                 throw new RuntimeException("(GlobalData) Response Code: " + responseCode);
             } else {
                 Scanner apiResponseScanner = new Scanner(url.openStream());
-                while(apiResponseScanner.hasNext()) {
+                while(apiResponseScanner.hasNextLine()) {
                     globalJsonResponse += apiResponseScanner.nextLine();
                 } apiResponseScanner.close();
 
@@ -85,7 +85,7 @@ public class GlobalDataService {
                 throw new RuntimeException("(CountryData) Response Code: " + responseCode);
             } else {
                 Scanner apiResponseScanner = new Scanner(url.openStream());
-                while(apiResponseScanner.hasNext()) {
+                while(apiResponseScanner.hasNextLine()) {
                     countryJsonResponse += apiResponseScanner.nextLine();
                 } apiResponseScanner.close();
 
